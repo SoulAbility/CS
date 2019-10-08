@@ -1,0 +1,53 @@
+// Final Project V1_JM.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+#include <string>
+//including string so we can we so do things like cout the string.
+
+using namespace std;
+
+const int numItems = 20;
+//making a coinstant intiger here, so the system will know the intiger value will never change, sowe can use it in our arrays.
+
+const string FoodItemsNames[numItems] = { "Brownies", "Burger", "Burrito", "Churros", "Cinnamon Roll", "Cookie", "Doughnut", "Hard Boiled Eggs", "Hot Dogs", "Hot Pockets", "Mini Tacos", "Nachos", "Pizza", "Popcorn","ramen", "Salad", "Sandwiches", "Sushi", "Taquitos", "Wings" };
+//this just created 20 variables side by side, 0-19 (string array) starting at Brownies = 0, Burger = 1, continuing untill lastly Wings = 19
+
+void printCart(int Stock[numItems]);
+
+int main()
+{
+	int Stock[20] = { 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 };
+		//this array is setting the stock of each item to 1.
+
+	cout << "***welcome tothe item shop!***\n";
+
+	for (int i = 0; i < numItems; i++) {
+		cout << FoodItemsNames[i] << endl;
+	}
+
+	cout << "**********\n\n";
+
+	printCart(Stock);
+
+	cout << "what would you like to buy>\n";
+
+	system("PAUSE");
+	return 0;
+}
+
+void printCart(int Stock[numItems])
+{
+	cout << "Checkout : \n";
+	for (int i = 0; i < numItems; i++) {
+		if (Stock[i] == 0) {
+			cout << " 1 " << " x " << FoodItemsNames[i] << " in cart." << endl;
+		}
+	}
+	cout << endl; 
+}
+// this is my solution of how to print out cart, we still need to make sure we can't add more than 3 items to cart, or else this is flawed. 
+
+
+// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
+// Debug program: F5 or Debug > Start Debugging menu
